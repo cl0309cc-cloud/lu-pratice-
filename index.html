@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lu's Practice Journal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css?v=58" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Main navigation">
+        <div class="brand">
+          <div>
+            <strong>Lu's Practice Journal
+              <svg class="brand-paw" viewBox="0 0 24 24" aria-hidden="true">
+                <ellipse cx="12" cy="16.4" rx="5.1" ry="4.2"/>
+                <ellipse cx="5.6" cy="8.6" rx="2.1" ry="2.6" transform="rotate(-18 5.6 8.6)"/>
+                <ellipse cx="11.1" cy="5.6" rx="2.15" ry="2.7"/>
+                <ellipse cx="16.6" cy="6.6" rx="2.1" ry="2.6" transform="rotate(16 16.6 6.6)"/>
+                <ellipse cx="19.6" cy="11" rx="1.95" ry="2.4" transform="rotate(32 19.6 11)"/>
+              </svg>
+            </strong>
+          </div>
+        </div>
+
+        <nav class="nav-list">
+          <a class="active nav-teal" href="#dashboard">
+            <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4.2v11.3a2.7 2.7 0 1 1-1.6-2.5"/><path d="M9 4.2l7-1.3v9.8"/><path d="M16 12.5a2.7 2.7 0 1 1-1.6-2.4"/></svg>
+            Daily Task
+          </a>
+          <a class="nav-slate" href="#calendar">
+            <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5.2" width="17" height="15" rx="3"/><path d="M3.6 9.6h16.8"/><path d="M8 3.2v3.6M16 3.2v3.6"/><circle cx="12" cy="14.6" r="1.2"/></svg>
+            Calendar
+          </a>
+          <a class="nav-sage" href="#pieces">
+            <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.6" y="5.2" width="16.8" height="13.8" rx="2.4"/><path d="M8.2 5.2v8.2M12 5.2v8.2M15.8 5.2v8.2"/></svg>
+            Pieces
+          </a>
+          <a class="nav-plum" href="#ideas">
+            <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.6c3 0 5.3 2.3 5.3 5.2 0 2-1 3.4-2.2 4.5-.7.6-1 1.3-1 2.1H9.9c0-.8-.3-1.5-1-2.1-1.2-1.1-2.2-2.5-2.2-4.5 0-2.9 2.4-5.2 5.3-5.2Z"/><path d="M10 17.8h4M10.5 20.2h3"/></svg>
+            Ideas
+          </a>
+          <a class="nav-dusk" href="#statistics">
+            <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.2 20V13.6M9.4 20V9.2M14.6 20V15M19.8 20V6.2"/></svg>
+            Statistics
+          </a>
+          <a class="nav-rose" href="#collection">
+            <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.7l2.4 5.3 5.8.6-4.3 3.9 1.2 5.7L12 16.4l-5.1 2.8 1.2-5.7-4.3-3.9 5.8-.6Z"/></svg>
+            Collection
+          </a>
+          <a class="nav-slate" href="#weekly">
+            <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6.6c-1.8-1.6-4.4-2-7-1.4v12.8c2.6-.6 5.2-.2 7 1.4 1.8-1.6 4.4-2 7-1.4V5.2c-2.6-.6-5.2-.2-7 1.4Z"/><path d="M12 6.6v12.4"/></svg>
+            Weekly Review
+          </a>
+          <a href="#settings">
+            <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 3.8v2.5M12 17.7v2.5M4 12h2.5M17.5 12H20M6.4 6.4l1.8 1.8M15.8 15.8l1.8 1.8M17.6 6.4l-1.8 1.8M8.2 15.8l-1.8 1.8"/></svg>
+            Settings
+          </a>
+          <a class="nav-teal" href="#goal">
+            <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="7.2"/><circle cx="12" cy="12" r="4.2"/><circle cx="12" cy="12" r="1.2"/></svg>
+            Goal
+          </a>
+        </nav>
+      </aside>
+
+      <main class="dashboard" id="dashboard">
+        <header class="hero">
+          <div class="hero-doodles" aria-hidden="true">
+          </div>
+          <div>
+            <p class="hero-statement">Be patient.<br />Deliberate practice.</p>
+          </div>
+          <div class="hero-actions">
+            <button class="practice-button" type="button" data-practice-start>
+              <span class="button-dot"></span>
+              Practice now →
+            </button>
+            <div class="phone-lock" aria-label="slide to enter practice mode">
+              <span>slide into focus</span>
+              <span class="focus-orb" aria-hidden="true"></span>
+              <input type="range" min="0" max="100" value="0" data-focus-slider />
+              <small data-slider-status>slide all the way</small>
+            </div>
+          </div>
+        </header>
+
+        <section class="grid">
+          <article class="card daily-card" data-page="dashboard">
+            <div class="card-header">
+              <div>
+                <p class="eyebrow">today</p>
+                <h2>Daily Task <span class="title-mark">🐾</span></h2>
+              </div>
+              <span class="date-chip" data-current-date>July 14</span>
+            </div>
+
+            <div class="task-list" data-progress-scope>
+              <div class="piece-task-group">
+                <button class="delete-button floating-delete" type="button" data-delete-task-block aria-label="Delete piece block">×</button>
+                <input type="search" class="piece-input" data-piece-select list="piece-name-options" placeholder="Choose piece" autocomplete="off" aria-label="Select piece for daily task" />
+                <div class="piece-task-list">
+                  <div class="task-line"><input type="checkbox" /> <input type="text" data-task-input placeholder="Type task" /><button class="delete-button" type="button" data-delete-task aria-label="Delete task">×</button></div>
+                </div>
+                <button class="text-button mini-link" type="button" data-add-piece-task>+ Task</button>
+                <div class="practice-notes">
+                  <label><span>Reflect</span><textarea data-reflect-input placeholder="What changed today?"></textarea></label>
+                  <label><span>Next time</span><textarea data-next-input placeholder="Where should I begin next?"></textarea></label>
+                </div>
+              </div>
+              <div class="piece-task-group">
+                <button class="delete-button floating-delete" type="button" data-delete-task-block aria-label="Delete piece block">×</button>
+                <input type="search" class="piece-input" data-piece-select list="piece-name-options" placeholder="Choose piece" autocomplete="off" aria-label="Select another piece for daily task" />
+                <div class="piece-task-list">
+                  <div class="task-line"><input type="checkbox" /> <input type="text" data-task-input placeholder="Type task" /><button class="delete-button" type="button" data-delete-task aria-label="Delete task">×</button></div>
+                </div>
+                <button class="text-button mini-link" type="button" data-add-piece-task>+ Task</button>
+                <div class="practice-notes">
+                  <label><span>Reflect</span><textarea data-reflect-input placeholder="What changed today?"></textarea></label>
+                  <label><span>Next time</span><textarea data-next-input placeholder="Where should I begin next?"></textarea></label>
+                </div>
+              </div>
+            </div>
+
+            <div class="daily-progress">
+              <div class="progress-line">
+                <span>Progress ...</span>
+                <strong data-daily-percent>25%</strong>
+              </div>
+              <div class="bar"><span data-daily-bar></span></div>
+              <div class="focus-total">
+                <span>Focus time today</span>
+                <strong data-focus-total>00:00</strong>
+              </div>
+              <div class="daily-sticker-reward" data-daily-sticker>
+                <span>Today’s sticker</span>
+                <strong>complete all tasks to collect</strong>
+              </div>
+            </div>
+
+            <button class="text-button add-piece-block" type="button" data-add-task>+ Piece</button>
+
+          </article>
+
+          <article class="card sticker-card" id="collection" data-page="collection">
+            <div class="card-header">
+              <div>
+                <p class="eyebrow">progress</p>
+                <h2>Sticker Album <span class="title-mark">✦</span></h2>
+              </div>
+              <span data-sticker-caption>stickers waiting</span>
+            </div>
+            <div class="sticker-scene" aria-label="practice sticker collection">
+              <div class="sticker-shelf" data-sticker-shelf>
+              </div>
+              <div class="shop-collection" data-shop-collection></div>
+              <div class="sticker-float" aria-hidden="true">✧</div>
+            </div>
+            <div class="sticker-legend">
+              <span>finish the day’s tasks = collect a random hand-drawn sticker</span>
+              <span>every 7 stickers = unlock a hidden little shop</span>
+            </div>
+          </article>
+
+          <article class="card stats-card" id="statistics" data-page="statistics">
+            <div class="card-header">
+              <div>
+                <p class="eyebrow">statistics</p>
+                <h2>Statistics <span class="title-mark">📈</span></h2>
+              </div>
+              <div class="mascot-cat" data-mascot-cat>
+                <svg class="mascot-cat-icon" viewBox="0 0 48 48" aria-hidden="true">
+                  <path d="M14 20c-2-6-2-11 1-13 1.6 3 2.6 5 3.4 6.6C20.4 12.6 22.1 12 24 12s3.6.6 5.6 1.6C30.4 12 31.4 10 33 7c3 2 3 7 1 13"/>
+                  <path d="M14.5 20.5c-3.4 1.2-5.5 4.4-5.5 8.6 0 6.6 6.7 12 15 12s15-5.4 15-12c0-4.2-2.1-7.4-5.5-8.6-2.8-1-6-1.5-9.5-1.5s-6.7.5-9.5 1.5Z"/>
+                  <path d="M18.5 27.2c.4-1 1.2-1.6 2-1.6s1.6.6 2 1.6M25.5 27.2c.4-1 1.2-1.6 2-1.6s1.6.6 2 1.6"/>
+                  <path d="M22.5 30.4c.5.6 1 .9 1.5.9s1-.3 1.5-.9"/>
+                  <path d="M13 31.5c-2 .3-3.4 1.3-3.4 2.5M35 31.5c2 .3 3.4 1.3 3.4 2.5"/>
+                </svg>
+                <span class="mascot-cat-message" data-mascot-message>Let's see how it's going.</span>
+              </div>
+            </div>
+            <div class="stats-tiles">
+              <div class="stats-tile">
+                <span class="stats-tile-label">Total practice time</span>
+                <strong data-stat-total>0:00</strong>
+              </div>
+              <div class="stats-tile">
+                <span class="stats-tile-label">Current streak</span>
+                <strong data-stat-streak>0 days</strong>
+              </div>
+              <div class="stats-tile">
+                <span class="stats-tile-label">Days practiced</span>
+                <strong data-stat-days>0</strong>
+              </div>
+            </div>
+            <div class="stats-pieces">
+              <p class="stats-pieces-title">Most practiced pieces</p>
+              <ul class="stats-piece-list" data-stats-piece-list></ul>
+            </div>
+          </article>
+
+          <article class="card calendar-card" id="calendar" data-page="calendar">
+            <div class="card-header">
+              <div>
+                <p class="eyebrow">calendar</p>
+                <h2>Choose a day <span class="title-mark">📝</span></h2>
+              </div>
+              <button class="small-button" type="button" data-today-task>Today Task</button>
+            </div>
+            <div class="calendar-grid" data-calendar>
+              <button type="button">8</button>
+              <button type="button">9</button>
+              <button type="button">10</button>
+              <button type="button">11</button>
+              <button type="button">12</button>
+              <button type="button">13</button>
+              <button class="selected" type="button">14</button>
+              <button type="button">15</button>
+              <button type="button">16</button>
+              <button type="button">17</button>
+              <button type="button">18</button>
+              <button type="button">19</button>
+              <button type="button">20</button>
+              <button type="button">21</button>
+            </div>
+            <div class="practice-archive" data-practice-archive>
+              <div class="archive-empty">Choose a day to review your practice archive.</div>
+            </div>
+          </article>
+
+          <article class="card pieces-card" id="pieces" data-page="pieces">
+            <div class="card-header">
+              <div>
+                <p class="eyebrow">pieces</p>
+                <h2>Your Pieces <span class="title-mark">🎼</span></h2>
+              </div>
+              <button class="small-button" type="button" data-add-piece-category>+ Category</button>
+            </div>
+            <div class="piece-status-legend">
+              <span><i class="legend-dot" data-legend="learning"></i>Learning notes</span>
+              <span><i class="legend-dot" data-legend="polishing"></i>Polishing</span>
+              <span><i class="legend-dot" data-legend="ready"></i>Stage ready</span>
+              <span class="piece-status-legend-hint">click the dot next to a piece to set its status</span>
+            </div>
+            <div class="piece-list" data-piece-list>
+              <details class="piece-group" open>
+                <summary>
+                  <span class="chevron">›</span>
+                  <span contenteditable="true">Solo pieces</span>
+                  <button class="delete-button" type="button" data-delete-piece-category aria-label="Delete category">×</button>
+                </summary>
+                <div class="piece-items">
+                  <div class="piece-line"><input type="checkbox" /> <input type="text" data-piece-name placeholder="Type piece name" /><button type="button" class="piece-status" data-piece-status="" title="Click to set status"></button><button class="delete-button" type="button" data-delete-piece aria-label="Delete piece">×</button></div>
+                  <div class="piece-line"><input type="checkbox" /> <input type="text" data-piece-name placeholder="Type piece name" /><button type="button" class="piece-status" data-piece-status="" title="Click to set status"></button><button class="delete-button" type="button" data-delete-piece aria-label="Delete piece">×</button></div>
+                </div>
+                <button class="text-button" type="button" data-add-piece-to-group>+ Piece</button>
+              </details>
+              <details class="piece-group">
+                <summary>
+                  <span class="chevron">›</span>
+                  <span contenteditable="true">Collaborative – Instrumental</span>
+                  <button class="delete-button" type="button" data-delete-piece-category aria-label="Delete category">×</button>
+                </summary>
+                <div class="piece-items">
+                  <div class="piece-line"><input type="checkbox" /> <input type="text" data-piece-name placeholder="Type piece name" /><button type="button" class="piece-status" data-piece-status="" title="Click to set status"></button><button class="delete-button" type="button" data-delete-piece aria-label="Delete piece">×</button></div>
+                </div>
+                <button class="text-button" type="button" data-add-piece-to-group>+ Piece</button>
+              </details>
+              <details class="piece-group">
+                <summary>
+                  <span class="chevron">›</span>
+                  <span contenteditable="true">Collaborative – Vocal</span>
+                  <button class="delete-button" type="button" data-delete-piece-category aria-label="Delete category">×</button>
+                </summary>
+                <div class="piece-items">
+                  <div class="piece-line"><input type="checkbox" /> <input type="text" data-piece-name placeholder="Type piece name" /><button type="button" class="piece-status" data-piece-status="" title="Click to set status"></button><button class="delete-button" type="button" data-delete-piece aria-label="Delete piece">×</button></div>
+                </div>
+                <button class="text-button" type="button" data-add-piece-to-group>+ Piece</button>
+              </details>
+              <details class="piece-group">
+                <summary>
+                  <span class="chevron">›</span>
+                  <span contenteditable="true">Concerto</span>
+                  <button class="delete-button" type="button" data-delete-piece-category aria-label="Delete category">×</button>
+                </summary>
+                <div class="piece-items">
+                  <div class="piece-line"><input type="checkbox" /> <input type="text" data-piece-name placeholder="Type piece name" /><button type="button" class="piece-status" data-piece-status="" title="Click to set status"></button><button class="delete-button" type="button" data-delete-piece aria-label="Delete piece">×</button></div>
+                  <div class="piece-line"><input type="checkbox" /> <input type="text" data-piece-name placeholder="Type piece name" /><button type="button" class="piece-status" data-piece-status="" title="Click to set status"></button><button class="delete-button" type="button" data-delete-piece aria-label="Delete piece">×</button></div>
+                </div>
+                <button class="text-button" type="button" data-add-piece-to-group>+ Piece</button>
+              </details>
+              <details class="piece-group">
+                <summary>
+                  <span class="chevron">›</span>
+                  <span contenteditable="true">Chamber</span>
+                  <button class="delete-button" type="button" data-delete-piece-category aria-label="Delete category">×</button>
+                </summary>
+                <div class="piece-items">
+                  <div class="piece-line"><input type="checkbox" /> <input type="text" data-piece-name placeholder="Type piece name" /><button type="button" class="piece-status" data-piece-status="" title="Click to set status"></button><button class="delete-button" type="button" data-delete-piece aria-label="Delete piece">×</button></div>
+                </div>
+                <button class="text-button" type="button" data-add-piece-to-group>+ Piece</button>
+              </details>
+            </div>
+          </article>
+
+          <article class="card ideas-card" id="ideas" data-page="ideas">
+            <div class="card-header">
+              <div>
+                <p class="eyebrow">ideas</p>
+                <h2>Ideas <span class="title-mark">💭</span></h2>
+              </div>
+              <button class="small-button" type="button" data-add-idea>+ Idea</button>
+            </div>
+            <div class="ideas-list" data-ideas-list>
+              <div class="idea-row"><span contenteditable="true"></span><button class="delete-button" type="button" data-delete-idea aria-label="Delete idea">×</button></div>
+              <div class="idea-row"><span contenteditable="true"></span><button class="delete-button" type="button" data-delete-idea aria-label="Delete idea">×</button></div>
+            </div>
+          </article>
+
+          <article class="card weekly-card" id="weekly" data-page="weekly">
+            <div class="card-header">
+              <div>
+                <p class="eyebrow">weekly review</p>
+                <h2>Weekly Review <span class="title-mark">🗂</span></h2>
+              </div>
+            </div>
+            <div class="week-stats" data-week-stats></div>
+            <div class="ideas-list">
+              <div class="idea-row"><span contenteditable="true"></span><button class="delete-button" type="button" aria-label="Delete weekly note">×</button></div>
+              <div class="idea-row"><span contenteditable="true"></span><button class="delete-button" type="button" aria-label="Delete weekly note">×</button></div>
+            </div>
+          </article>
+
+          <article class="card settings-card" id="settings" data-page="settings">
+            <div class="card-header">
+              <div>
+                <p class="eyebrow">settings</p>
+                <h2>Settings <span class="title-mark">⚙</span></h2>
+              </div>
+            </div>
+            <div class="settings-list">
+              <label><span>Practice reminder</span><input type="text" placeholder="Type reminder note" /></label>
+              <label><span>Default focus goal</span><input type="text" placeholder="e.g. 45 minutes" /></label>
+            </div>
+          </article>
+
+          <article class="card year-card" id="goal" data-page="goal">
+            <div class="card-header">
+              <div>
+                <p class="eyebrow">editable annual goal</p>
+                <h2>Goal <span class="title-mark">🎯</span></h2>
+              </div>
+              <button class="small-button" type="button" data-add-plan>+ Category</button>
+            </div>
+
+            <div class="plan-list" data-plan-list>
+              <details class="plan-group" open>
+                <summary>
+                  <span class="chevron">›</span>
+                  <span contenteditable="true"></span>
+                  <small>click to edit</small>
+                  <button class="delete-button" type="button" data-delete-plan aria-label="Delete category">×</button>
+                </summary>
+                <div class="subtasks">
+                  <div class="goal-item">
+                    <button class="delete-button floating-delete" type="button" data-delete-goal-item aria-label="Delete subtask">×</button>
+                    <div class="goal-line"><input type="text" data-goal-input placeholder="Type goal detail" /></div>
+                    <textarea class="goal-description" data-goal-desc placeholder="Detailed description"></textarea>
+                    <div class="nested-subtasks"></div>
+                    <button class="text-button mini-link" type="button" data-add-nested-detail>+ Detail</button>
+                  </div>
+                </div>
+                <button class="text-button" type="button" data-add-subtask>+ Subtask</button>
+              </details>
+            </div>
+          </article>
+
+        </section>
+      </main>
+    </div>
+
+    <div class="focus-overlay" data-focus-overlay aria-hidden="true">
+      <section class="focus-dialog" role="dialog" aria-modal="true" aria-labelledby="focus-title">
+        <div class="focus-ritual-header">
+          <div>
+            <p class="eyebrow">practice ritual</p>
+            <h2 id="focus-title">Focus begins</h2>
+            <small class="focus-whisper">listen first</small>
+          </div>
+          <div class="focus-time" data-focus-time>00:00</div>
+        </div>
+        <div class="focus-task-mount" data-focus-task-mount></div>
+        <p class="focus-copy">listen first · one sound at a time</p>
+        <div class="focus-review" data-focus-review aria-hidden="true">
+          <div>
+            <p class="eyebrow">closing reflection</p>
+            <h3>What should stay with you?</h3>
+          </div>
+          <label>
+            <span>What improved?</span>
+            <textarea data-focus-reflect placeholder="A sound, a touch, a phrase..."></textarea>
+          </label>
+          <label>
+            <span>Begin next time with</span>
+            <textarea data-focus-next placeholder="The exact place to restart."></textarea>
+          </label>
+        </div>
+        <div class="focus-actions">
+          <button class="practice-button" type="button" data-focus-done>Finish practice</button>
+          <button class="practice-button save-review-button" type="button" data-focus-save-review>Save reflection</button>
+          <button class="quiet-button" type="button" data-focus-exit>Exit</button>
+        </div>
+
+        <div class="exit-confirm" data-exit-confirm aria-hidden="true">
+          <div class="exit-confirm-card">
+            <p class="eyebrow">wait</p>
+            <h3>Hang in there a little longer!</h3>
+            <p class="exit-confirm-copy">Your focus time so far is already saved either way.</p>
+            <div class="exit-confirm-actions">
+              <button class="practice-button" type="button" data-exit-keep>Keep practicing</button>
+              <button class="quiet-button" type="button" data-exit-leave>Exit anyway</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="text-format-toolbar" data-format-toolbar aria-hidden="true">
+      <button type="button" data-format-style="bold" aria-label="Bold">B</button>
+      <button type="button" data-format-style="underline" aria-label="Underline">U</button>
+      <button class="color-dot color-berry" type="button" data-format-color="berry" aria-label="Berry text"></button>
+      <button class="color-dot color-brown" type="button" data-format-color="brown" aria-label="Brown text"></button>
+      <button class="color-dot color-blue" type="button" data-format-color="blue" aria-label="Blue text"></button>
+      <button class="color-reset" type="button" data-format-color="reset" aria-label="Reset text color">×</button>
+    </div>
+
+    <div class="completion-toast" data-completion-toast aria-hidden="true">
+      <span>sticker collected</span>
+    </div>
+
+    <script src="./script.js"></script>
+    <datalist id="piece-name-options" data-piece-datalist></datalist>
+  </body>
+</html>
